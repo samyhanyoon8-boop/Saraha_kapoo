@@ -8,8 +8,9 @@ async function sendMessage() {
         return;
     }
 
-    const botToken = "PUT_YOUR_BOT_TOKEN_HERE"; 
-    const chatId = "PUT_YOUR_CHAT_ID_HERE";
+    // بيانات البوت وحسابك
+    const botToken = "8543960258:AAHbxuWBEOiWWmJJyqvWvi1JmujGm3KfcOk"; 
+    const chatId = "8357427128";
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
@@ -30,9 +31,11 @@ async function sendMessage() {
         } else {
             status.innerText = "❌ حدث خطأ، حاول مرة أخرى.";
             status.style.color = "red";
+            console.error("خطأ في الاستجابة من تليجرام");
         }
     } catch (err) {
         status.innerText = "❌ حدث خطأ، حاول مرة أخرى.";
         status.style.color = "red";
+        console.error(err);
     }
 }
